@@ -1,25 +1,29 @@
 import React, { useState, useEffect } from "react";
 import styles from "./TimmerComponent.module.css";
-const TimerComponent = () => {
-  const [timer, setTimer] = useState(1 * 60); // 5 minutes in seconds
-
+const TimerComponent = ({ isTimer, setIsTimer }) => {
+  const [timer, setTimer] = useState(5 * 60); // 5 minutes in seconds
   useEffect(() => {
-    const interval = setInterval(() => {
-      setTimer((prevTimer) => {
-        if (prevTimer > 0) {
-          return prevTimer - 1;
-        } else {
-          clearInterval(interval);
-          alert("Time is over!");
-          return 0;
-        }
-      });
-    }, 1000);
+    let interval = null;
+
+    if (isTimer) {
+      interval = setInterval(() => {
+        setTimer((prevTimer) => {
+          if (prevTimer > 0) {
+            return prevTimer - 1;
+          } else {
+            clearInterval(interval);
+            setIsTimer(0);
+          }
+        });
+      }, 1000);
+    } else {
+      clearInterval(interval);
+    }
 
     return () => {
       clearInterval(interval);
     };
-  }, []);
+  }, [isTimer]);
 
   const formatTime = (time) => {
     const minutes = Math.floor(time / 60);

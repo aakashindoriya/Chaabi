@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styles from "./TypingBox.module.css";
 
 export default function TypingBox({
@@ -10,6 +10,10 @@ export default function TypingBox({
   currIndex,
   setActiveKey,
 }) {
+  const inputRef = useRef(null);
+  useEffect(() => {
+    inputRef.current.focus();
+  }, []);
   function handleInputs(e) {
     const inputValue = e.target.value;
     const matchingPart = text.slice(0, currIndex + 1);
@@ -27,6 +31,7 @@ export default function TypingBox({
       setActiveKey(key);
     }
   };
+
   const matchingPart = text.slice(0, currIndex);
   const remainingPart = text.slice(currIndex);
   return (
@@ -38,6 +43,7 @@ export default function TypingBox({
       </div>
       <div>
         <input
+          ref={inputRef}
           value={typedText}
           onChange={handleInputs}
           onKeyPress={handleKeyPress}
