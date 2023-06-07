@@ -1,6 +1,8 @@
 # Touch Typing Practice App
 
 This is a touch typing practice app where users can improve their typing speed and accuracy by practicing words made up of the letters 'asdfjkl'. The app provides a 5-minute timer and tracks the user's accuracy while typing.
+![image](https://github.com/aakashindoriya/Chaabi/assets/37771235/7b99c850-1159-4571-a909-a561ac8fd299)
+
 
 ## Getting Started
 
