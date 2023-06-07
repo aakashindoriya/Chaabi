@@ -17,6 +17,7 @@ export default function Start({
   return (
     <div className={style.start}>
       <button onClick={handleClick}>Start</button>
+      <img src="https://user-images.githubusercontent.com/37771235/244142559-7b99c850-1159-4571-a909-a561ac8fd299.png" />
     </div>
   );
 }

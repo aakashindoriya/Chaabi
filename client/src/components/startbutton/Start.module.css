@@ -9,12 +9,16 @@
     padding: 2%;
 
 }
-
+.start img{
+    width: 60%;
+    margin: auto;
+}
 .start button{
     width: 90%;
     margin: auto;
     border: none;
-    font-size: 30px;
+    font-size: 40px;
+    font-weight: bold;
     background-color: transparent;
 
 }

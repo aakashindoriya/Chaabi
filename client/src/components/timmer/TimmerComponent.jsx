@@ -13,6 +13,8 @@ const TimerComponent = ({ isTimer, setIsTimer }) => {
           } else {
             clearInterval(interval);
             setIsTimer(0);
+            alert("Time's Up");
+            return;
           }
         });
       }, 1000);

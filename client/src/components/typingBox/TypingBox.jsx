@@ -9,6 +9,7 @@ export default function TypingBox({
   typedText,
   currIndex,
   setActiveKey,
+  setCorrect,
 }) {
   const inputRef = useRef(null);
   useEffect(() => {
@@ -20,6 +21,7 @@ export default function TypingBox({
     if (matchingPart === inputValue.slice(0, currIndex + 1)) {
       setCount((prevCount) => prevCount + 1);
       setCurrentIndex((prevIndex) => prevIndex + 1);
+      setCorrect((pre) => pre + 1);
       setTypedText(inputValue);
     } else {
       setCount((prevCount) => prevCount + 1);
