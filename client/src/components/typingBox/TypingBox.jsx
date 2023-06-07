@@ -8,6 +8,7 @@ export default function TypingBox({
   setCurrentIndex,
   typedText,
   currIndex,
+  setActiveKey,
 }) {
   function handleInputs(e) {
     const inputValue = e.target.value;
@@ -20,7 +21,12 @@ export default function TypingBox({
       setCount((prevCount) => prevCount + 1);
     }
   }
-
+  const handleKeyPress = (event) => {
+    const key = event.key.toUpperCase();
+    if ((key >= "A" && key <= "L") || key == "S") {
+      setActiveKey(key);
+    }
+  };
   const matchingPart = text.slice(0, currIndex);
   const remainingPart = text.slice(currIndex);
   return (
@@ -31,7 +37,11 @@ export default function TypingBox({
         {/* {Math.round((currIndex / count) * 100) || 100} % */}
       </div>
       <div>
-        <input value={typedText} onChange={handleInputs} />
+        <input
+          value={typedText}
+          onChange={handleInputs}
+          onKeyPress={handleKeyPress}
+        />
       </div>
     </div>
   );

@@ -1,14 +1,13 @@
 .typingBox{
-    background-color:pink;
     font-size: 40px;
     font-family: 'Times New Roman', Times, serif;
     width: 90vw;
-    height: 100vw;
     padding: 2%;
     margin: auto;
 }
 
 .typingBox input{
+    margin-top: 20px;
     width: 90%;
     height: 50px;
     border: none;
