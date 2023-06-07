@@ -1,0 +1,21 @@
+.typingBox{
+    background-color:pink;
+    font-size: 40px;
+    font-family: 'Times New Roman', Times, serif;
+    width: 90vw;
+    height: 100vw;
+    padding: 2%;
+    margin: auto;
+}
+
+.typingBox input{
+    width: 90%;
+    height: 50px;
+    border: none;
+    font-size: large;
+    border-radius: 10px;
+}
+.typingBox input:focus{
+outline:none;
+border-color:rgb(172, 133, 139)
+}

@@ -1,23 +1,30 @@
 import logo from './logo.svg';
 import './App.css';
+import TypingBox from './components/typingBox/TypingBox';
+import TimerComponent from './components/timmer/TimmerComponent';
+import { useState } from 'react';
+import AccuracyComponent from './components/accuracy/AccuracyComponent';
 
 function App() {
+  const [count, setCount] = useState(0);
+  const [typedText, setTypedText] = useState("");
+  const [currIndex, setCurrentIndex] = useState(0);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div id="stacks">
+        <TimerComponent />
+        <AccuracyComponent correct={currIndex} total={count} />
+      </div>
+      <TypingBox
+        text={"you can feel the height"}
+        count={count}
+        setCount={setCount}
+        typedText={typedText}
+        currIndex={currIndex}
+        setCurrentIndex={setCurrentIndex}
+        setTypedText={setTypedText}
+      />
     </div>
   );
 }

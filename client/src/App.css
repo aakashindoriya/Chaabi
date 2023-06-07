@@ -6,6 +6,12 @@
   height: 40vmin;
   pointer-events: none;
 }
+#stacks{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
