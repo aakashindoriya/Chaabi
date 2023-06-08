@@ -1,5 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import styles from "./TypingBox.module.css";
+import rightSound from "../sound/files/right.wav";
+import { playSound } from "../sound/Playaudio";
+import wrongSound from "../sound/files/wrong.wav";
 
 export default function TypingBox({
   text,
@@ -23,8 +26,10 @@ export default function TypingBox({
       setCurrentIndex((prevIndex) => prevIndex + 1);
       setCorrect((pre) => pre + 1);
       setTypedText(inputValue);
+      playSound(rightSound);
     } else {
       setCount((prevCount) => prevCount + 1);
+      playSound(wrongSound);
     }
   }
   const handleKeyPress = (event) => {

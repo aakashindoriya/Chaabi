@@ -13,8 +13,11 @@
     border: none;
     font-size: large;
     border-radius: 10px;
+    text-align: center;
+
 }
 .typingBox input:focus{
+    text-align: center;
 outline:none;
 border-color:rgb(172, 133, 139)
 }

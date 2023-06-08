@@ -6,6 +6,7 @@ export default function Start({
   setActiveKey,
   setCount,
   setTimer,
+  setCorrect,
 }) {
   function handleClick() {
     setCurrentIndex(0);
@@ -13,6 +14,7 @@ export default function Start({
     setActiveKey("");
     setCount(0);
     setTimer(true);
+    setCorrect(0);
   }
   return (
     <div className={style.start}>
